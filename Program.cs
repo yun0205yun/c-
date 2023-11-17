@@ -10,6 +10,9 @@
             Test test1 = new Test(4, 5);
             Console.WriteLine("\n 1.乘法");
             test1.Mix();
+            //用int 回傳值
+            Console.WriteLine($"用int 回傳:");
+            test1.mix(9, 9);
             // 農場拜訪 隨機
             Console.WriteLine("\n 2.農場拜訪 隨機");
             test1.PlanSchoolVisit("School A");
@@ -35,6 +38,9 @@
             //.split()
             Console.WriteLine("\n 9..split()去逗點 找出字串的錯誤");
             test1.SPLIT();
+            Console.WriteLine("\n 用string 去回傳");
+            string split=test1.Split();
+            Console.WriteLine(split);
             //:C 貨幣格式規範是用來將 price 與 discount 變數呈現為貨幣
             Console.WriteLine("\n 10.:C 貨幣格式規範");
             test1.MONEY(123.45m, 50);
@@ -47,8 +53,10 @@
             //顯示電子郵件地址
             Console.WriteLine("\n 13.顯示電子郵件地址");
             test1.email();
+            //從方法傳回布林值 回文
+            Console.WriteLine("\n 14.從方法傳回布林值(迴文)");
+            test1.Pal();
             //
-
 
 
 

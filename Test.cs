@@ -20,6 +20,14 @@ namespace c_
             Console.WriteLine($"乘法 :{allmodel.a}x {allmodel.b} = {allmodel.c}");
 
         }
+        public int mix(int a,int b)//用int 回傳
+        {
+            int c = a * b;
+            Console.WriteLine($"乘法 :{a}x {b} = {c}");
+            return c;
+             
+        }
+
         //農場拜訪 隨機
         public void PlanSchoolVisit(string schoolName, int group = 6)
         {
@@ -72,7 +80,7 @@ namespace c_
             }
         }
         //找數字加總 foreach
-        public void Number()
+        public void  Number()
         {
             int total = 0;
             bool found = false;
@@ -212,6 +220,27 @@ namespace c_
                 }
             }
         }
+        public string Split()
+        {
+            string[] items = allmodel.split.Split(",");
+            Array.Sort(items);
+
+            StringBuilder result  = new StringBuilder();
+
+            foreach (var item in items)
+            {
+                if (item.Length != 4)
+                {
+                    result.AppendLine(item + "\t -Error");
+
+                }
+                else
+                {
+                    result.AppendLine(item);
+                }
+            }
+            return result.ToString();
+        }
         //:C 貨幣格式規範是用來將 price 與 discount 變數呈現為貨幣
         public void MONEY(decimal price,int discount)
         {
@@ -265,14 +294,40 @@ namespace c_
             {
                 displayemail(first: allmodel.Outemail[i, 0], last: allmodel.Outemail[i, 0]);
             }
-            void displayemail(string first,string last,string domain="in.com")
+            string displayemail(string first,string last,string domain="in.com")
             {
                 string email = first.Substring(0, 2) + last;
                 email=email.ToLower();
                 Console.WriteLine($"{email}@{domain}");
+                return email;
+            }
+        }
+        //從方法傳回布林值
+        public void  Pal()
+        {
+            Console.WriteLine("Is it a 迴文?");
+            foreach(string word in allmodel.Pal)
+            {
+                Console.WriteLine($"{word}:{IsPal(word)}");
+            }
+            bool IsPal(string word)
+            {
+                int start = 0;
+                int end = word.Length-1;
+                while (start < end)
+                {
+                    if (word[start] != word[end])
+                    {
+                        return false;
+                    }
+                    start++;
+                    end--;
+                }
+                return true;
             }
         }
         //
+
 
 
 

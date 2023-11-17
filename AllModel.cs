@@ -42,8 +42,9 @@ namespace c_
             {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
             {"Shay", "Lawrence"}, {"Daren", "Valdes"}
         };
+        //從方法傳回布林值 迴文
+        public string[] Pal = { "racecar", "talented", "deified", "tent", "tenet" };
         //
-
 
     }
 }
